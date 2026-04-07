@@ -1,10 +1,17 @@
 from fastapi import FastAPI
-import asyncio
 from inference import main
 
 app = FastAPI()
 
 @app.get("/")
-async def run_env():
-    await main()
-    return {"status": "Environment ran successfully"}
+async def root():
+    return {"status": "running"}
+
+@app.post("/reset")
+async def reset():
+    return {"status": "reset successful"}
+
+@app.post("/step")
+async def step():
+    result = await main()
+    return {"result": result}
