@@ -1,6 +1,11 @@
 [project]
 name = "email-triage-env"
 version = "0.1.0"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "openenv-core>=0.2.0"
+]
 
 [project.scripts]
-server = "server.app:app"
+server = "server.app:main"
