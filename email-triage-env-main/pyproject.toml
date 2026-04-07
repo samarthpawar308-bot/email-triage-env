@@ -1,13 +1,6 @@
 [project]
 name = "email-triage-env"
 version = "0.1.0"
-description = "OpenEnv email triage environment"
-authors = [{ name = "Aryan Vishwakarma" }]
-dependencies = [
-    "pydantic",
-    "openai",
-    "openenv-core"
-]
 
-[tool.openenv]
-entrypoint = "env.environment:EmailEnv"
+[project.scripts]
+server = "server.app:app"
