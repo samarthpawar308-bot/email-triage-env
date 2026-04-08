@@ -8,6 +8,11 @@ action_model: env.models:Action
 reward_model: env.models:Reward
 
 tasks:
-  - easy
-  - medium
-  - hard
+  - name: easy
+    grader: env.graders:easy_grader
+
+  - name: medium
+    grader: env.graders:medium_grader
+
+  - name: hard
+    grader: env.graders:hard_grader
